@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5400 1900" font-family="Segoe UI, Arial, sans-serif" font-size="14">
+  <style>
+    .lvl     { fill:#888; font-style:italic; font-size:18px; }
+    .title   { font-weight:bold; font-size:14px; fill:#000; }
+    .opt     { font-size:12px; fill:#333; }
+    .final   { font-weight:bold; font-size:20px; fill:#000; }
+    .lane    { fill:#f5f5f5; }
+    .lanetx  { fill:#bbb; font-size:14px; font-style:italic; }
+
+    path.edge { fill:none; stroke-width:1.6; opacity:0.55; }
+    .e-laypat { stroke:#2563eb; }   /* синий — цепочка LAYPAT */
+    .e-glue   { stroke:#059669; }   /* зелёный — цепочка GLUE  */
+    .e-grout  { stroke:#d97706; }   /* оранжевый — цепочка GROUT */
+    .e-cost   { stroke:#9333ea; }   /* фиолетовый — стоимость/бюджет */
+    .e-sol    { stroke:#555; stroke-width:2; opacity:0.7; }
+
+    .legend rect  { stroke:#ccc; stroke-width:1; fill:#fff; }
+    .legend text  { font-size:13px; }
+  </style>
+
+  <!-- ============ Фон-«коридоры» под три главные цепочки ============ -->
+  <rect class="lane" x="100"  y="180" width="1480" height="1620" rx="20"/>
+  <rect class="lane" x="1740" y="180" width="1620" height="1620" rx="20"/>
+  <rect class="lane" x="3520" y="180" width="1240" height="1620" rx="20"/>
+  <rect class="lane" x="4820" y="180" width="560"  height="1620" rx="20"/>
+
+  <text class="lanetx" x="840"  y="210" text-anchor="middle">Цепочка LAYPAT (способ укладки)</text>
+  <text class="lanetx" x="2550" y="210" text-anchor="middle">Цепочка GLUE (клей)</text>
+  <text class="lanetx" x="4140" y="210" text-anchor="middle">Цепочка GROUT (затирка)</text>
+  <text class="lanetx" x="5100" y="210" text-anchor="middle">Стоимость / бюджет</text>
+
+  <!-- Подписи уровней слева -->
+  <text class="lvl" x="20" y="100">ИТОГ*</text>
+  <text class="lvl" x="20" y="380">Уровень 4*</text>
+  <text class="lvl" x="20" y="640">Уровень 3*</text>
+  <text class="lvl" x="20" y="900">Уровень 2*</text>
+  <text class="lvl" x="20" y="1160">Уровень 1*</text>
+  <text class="lvl" x="20" y="1540">Входы</text>
+
+  <!-- ============ Легенда (правый верх) ============ -->
+  <g class="legend" transform="translate(5180,40)">
+    <rect x="0" y="0" width="200" height="120" rx="6"/>
+    <line x1="10" y1="22"  x2="40" y2="22"  stroke="#2563eb" stroke-width="2"/>
+    <line x1="10" y1="42"  x2="40" y2="42"  stroke="#059669" stroke-width="2"/>
+    <line x1="10" y1="62"  x2="40" y2="62"  stroke="#d97706" stroke-width="2"/>
+    <line x1="10" y1="82"  x2="40" y2="82"  stroke="#9333ea" stroke-width="2"/>
+    <line x1="10" y1="102" x2="40" y2="102" stroke="#555"    stroke-width="2"/>
+    <text x="50" y="26">укладка</text>
+    <text x="50" y="46">клей</text>
+    <text x="50" y="66">затирка</text>
+    <text x="50" y="86">стоимость/бюджет</text>
+    <text x="50" y="106">итог</text>
+  </g>
+
+  <!-- ============ ИТОГ (Y ~ 80) ============ -->
+  <g>
+    <text class="final" x="2700" y="90" text-anchor="middle">Итоговая рекомендация (SOLUTION)*</text>
+    <text class="opt"   x="2700" y="115" text-anchor="middle">— способ укладки + клей + затирка одной строкой</text>
+  </g>
+
+  <!-- ============ Уровень 4 (Y ~ 360) ============ -->
+  <g>
+    <text class="title" x="840"  y="360" text-anchor="middle">Способ укладки (LAYPAT)*</text>
+    <text class="opt"   x="840"  y="380" text-anchor="middle">- прямая / диагональная</text>
+    <text class="opt"   x="840"  y="396" text-anchor="middle">- ёлочкой / со смещением</text>
+    <text class="opt"   x="840"  y="412" text-anchor="middle">- модульная</text>
+    <text class="opt"   x="840"  y="428" text-anchor="middle">- упрощённая (без профи)</text>
+  </g>
+  <g>
+    <text class="title" x="2550" y="360" text-anchor="middle">Тип клея (GLUE)*</text>
+    <text class="opt"   x="2550" y="380" text-anchor="middle">- стандартный / улучшенный / усиленный</text>
+    <text class="opt"   x="2550" y="396" text-anchor="middle">- эластичный</text>
+    <text class="opt"   x="2550" y="412" text-anchor="middle">- морозостойкий (влагостойкий)</text>
+    <text class="opt"   x="2550" y="428" text-anchor="middle">- для влажных / быстросохнущий</text>
+    <text class="opt"   x="2550" y="444" text-anchor="middle">- термостойкий (+ грунтовка)</text>
+  </g>
+  <g>
+    <text class="title" x="4140" y="360" text-anchor="middle">Тип затирки (GROUT)*</text>
+    <text class="opt"   x="4140" y="380" text-anchor="middle">- цементная / для широких швов</text>
+    <text class="opt"   x="4140" y="396" text-anchor="middle">- эпоксидная</text>
+    <text class="opt"   x="4140" y="412" text-anchor="middle">- антигрибковая</text>
+    <text class="opt"   x="4140" y="428" text-anchor="middle">- декоративная</text>
+  </g>
+
+  <!-- LAYPAT/GLUE/GROUT → SOLUTION (плавные кривые) -->
+  <path class="edge e-sol" d="M 840  345 C 840  240, 2680 200, 2680 130"/>
+  <path class="edge e-sol" d="M 2550 345 C 2550 250, 2700 200, 2700 130"/>
+  <path class="edge e-sol" d="M 4140 345 C 4140 240, 2720 200, 2720 130"/>
+
+  <!-- ============ Уровень 3 (Y ~ 640) ============ -->
+  <g>
+    <text class="title" x="840"  y="620" text-anchor="middle">Нужен профессионал (NEEDPRO)*</text>
+    <text class="opt"   x="840"  y="640" text-anchor="middle">- да / нет</text>
+    <text class="opt"   x="840"  y="656" text-anchor="middle">- нужен, но бюджет не позволяет</text>
+  </g>
+  <g>
+    <text class="title" x="5100" y="620" text-anchor="middle">Соответствие бюджета (BUDGETFIT)*</text>
+    <text class="opt"   x="5100" y="640" text-anchor="middle">- достаточно</text>
+    <text class="opt"   x="5100" y="656" text-anchor="middle">- недостаточно</text>
+  </g>
+
+  <!-- NEEDPRO → LAYPAT -->
+  <path class="edge e-laypat" d="M 840 605 C 840 500, 840 450, 840 460"/>
+  <!-- BUDGETFIT → NEEDPRO (длинная горизонталь, изящная дуга) -->
+  <path class="edge e-cost" d="M 5070 640 C 4000 750, 1900 750, 870 640"/>
+
+  <!-- ============ Уровень 2 (Y ~ 880) ============ -->
+  <g>
+    <text class="title" x="840"  y="880" text-anchor="middle">Уровень мастерства (SKILLREQ)*</text>
+    <text class="opt"   x="840"  y="900" text-anchor="middle">- низкий / средний / высокий</text>
+  </g>
+  <g>
+    <text class="title" x="2550" y="880" text-anchor="middle">Класс клея (GLUECLASS)*</text>
+    <text class="opt"   x="2550" y="900" text-anchor="middle">- стандартный / улучшенный</text>
+    <text class="opt"   x="2550" y="916" text-anchor="middle">- усиленный / эластичный</text>
+  </g>
+  <g>
+    <text class="title" x="4140" y="880" text-anchor="middle">Гидроизоляция (HYDRO)*</text>
+    <text class="opt"   x="4140" y="900" text-anchor="middle">- обязательна / желательна / не нужна</text>
+  </g>
+  <g>
+    <text class="title" x="5100" y="880" text-anchor="middle">Стоимость проекта (COSTLEVEL)*</text>
+    <text class="opt"   x="5100" y="900" text-anchor="middle">- низкая / средняя / высокая</text>
+  </g>
+
+  <!-- SKILLREQ → NEEDPRO -->
+  <path class="edge e-laypat" d="M 840 865 C 840 760, 840 700, 840 605"/>
+  <!-- GLUECLASS → GLUE -->
+  <path class="edge e-glue" d="M 2550 865 C 2550 700, 2550 500, 2550 460"/>
+  <!-- HYDRO → GROUT -->
+  <path class="edge e-grout" d="M 4140 865 C 4140 700, 4140 500, 4140 460"/>
+  <!-- COSTLEVEL → BUDGETFIT -->
+  <path class="edge e-cost" d="M 5100 865 C 5100 770, 5100 700, 5100 670"/>
+
+  <!-- ============ Уровень 1 (Y ~ 1140) ============ -->
+  <g>
+    <text class="title" x="840"  y="1140" text-anchor="middle">Сложность рисунка (DIFFIC)*</text>
+    <text class="opt"   x="840"  y="1160" text-anchor="middle">- низкая / средняя / высокая</text>
+  </g>
+  <g>
+    <text class="title" x="2550" y="1140" text-anchor="middle">Эластичность клея (ELAST)*</text>
+    <text class="opt"   x="2550" y="1160" text-anchor="middle">- обязательна / желательна / не требуется</text>
+  </g>
+  <g>
+    <text class="title" x="4140" y="1140" text-anchor="middle">Влажность среды (WETENV)*</text>
+    <text class="opt"   x="4140" y="1160" text-anchor="middle">- сухая / влажная / мокрая</text>
+  </g>
+
+  <!-- DIFFIC → SKILLREQ -->
+  <path class="edge e-laypat" d="M 840 1125 C 840 1020, 840 970, 840 925"/>
+  <!-- ELAST → GLUECLASS -->
+  <path class="edge e-glue" d="M 2550 1125 C 2550 1020, 2550 970, 2550 925"/>
+  <!-- WETENV → HYDRO -->
+  <path class="edge e-grout" d="M 4140 1125 C 4140 1020, 4140 970, 4140 925"/>
+
+  <!-- кросс-связи уровня 1/2 → уровня 2/4 (помечены своим цветом) -->
+  <!-- DIFFIC → COSTLEVEL -->
+  <path class="edge e-cost" d="M 870 1125 C 1500 1050, 5100 980, 5100 925"/>
+  <!-- HYDRO → COSTLEVEL -->
+  <path class="edge e-cost" d="M 4160 880 C 4500 880, 5070 880, 5080 880"/>
+  <!-- GLUECLASS → COSTLEVEL -->
+  <path class="edge e-cost" d="M 2570 880 C 3500 800, 5080 800, 5095 870"/>
+  <!-- WETENV → GLUE -->
+  <path class="edge e-glue" d="M 4120 1125 C 3600 800, 2600 600, 2560 460"/>
+
+  <!-- ============ ВХОДЫ (Y ~ 1540) ============
+       Сгруппированы под их цепочкой:
+       LAYPAT (x=180..1500), GLUE (x=1820..3380), GROUT (x=3580..4740),
+       BUDGET-стенд (x=4900..5100)
+  -->
+
+  <!-- Группа 1: LAYPAT — 7 входов, шаг 220, x = 180..1500 -->
+  <g>
+    <text class="title" x="180" y="1540" text-anchor="middle">Рисунок (PATTERN)</text>
+    <text class="opt"   x="180" y="1558" text-anchor="middle">прямая / диагональная</text>
+    <text class="opt"   x="180" y="1574" text-anchor="middle">ёлочкой / смещ. / модульная</text>
+  </g>
+  <g>
+    <text class="title" x="400" y="1540" text-anchor="middle">Форма (TILESHP)</text>
+    <text class="opt"   x="400" y="1558" text-anchor="middle">квадрат / прямоуг.</text>
+    <text class="opt"   x="400" y="1574" text-anchor="middle">шестигранник</text>
+  </g>
+  <g>
+    <text class="title" x="620" y="1540" text-anchor="middle">Площадь (AREA)</text>
+    <text class="opt"   x="620" y="1558" text-anchor="middle">&lt;5 / 5–15</text>
+    <text class="opt"   x="620" y="1574" text-anchor="middle">15–30 / &gt;30 м²</text>
+  </g>
+  <g>
+    <text class="title" x="840" y="1540" text-anchor="middle">Опыт (EXP)</text>
+    <text class="opt"   x="840" y="1558" text-anchor="middle">новичок / средний</text>
+    <text class="opt"   x="840" y="1574" text-anchor="middle">профессионал</text>
+  </g>
+  <g>
+    <text class="title" x="1060" y="1540" text-anchor="middle">Стиль (STYLE)</text>
+    <text class="opt"   x="1060" y="1558" text-anchor="middle">современный</text>
+    <text class="opt"   x="1060" y="1574" text-anchor="middle">классич. / миним.</text>
+  </g>
+  <g>
+    <text class="title" x="1280" y="1540" text-anchor="middle">Состояние (BASECOND)</text>
+    <text class="opt"   x="1280" y="1558" text-anchor="middle">ровн. / неровн.</text>
+    <text class="opt"   x="1280" y="1574" text-anchor="middle">трещины / кап.</text>
+  </g>
+  <g>
+    <text class="title" x="1500" y="1540" text-anchor="middle">Поверхность (SURFACE)</text>
+    <text class="opt"   x="1500" y="1558" text-anchor="middle">пол / стена / потолок</text>
+  </g>
+
+  <!-- Группа 2: GLUE — 8 входов, шаг 220, x = 1820..3360 -->
+  <g>
+    <text class="title" x="1820" y="1540" text-anchor="middle">Размер (TILESIZE)</text>
+    <text class="opt"   x="1820" y="1558" text-anchor="middle">&lt;20 / 20–40 / &gt;40</text>
+  </g>
+  <g>
+    <text class="title" x="2040" y="1540" text-anchor="middle">Бюджет (BUDGET)</text>
+    <text class="opt"   x="2040" y="1558" text-anchor="middle">низкий / средний</text>
+    <text class="opt"   x="2040" y="1574" text-anchor="middle">высокий</text>
+  </g>
+  <g>
+    <text class="title" x="2260" y="1540" text-anchor="middle">Материал (BASEMAT)</text>
+    <text class="opt"   x="2260" y="1558" text-anchor="middle">бетон / ГКЛ / дерево</text>
+    <text class="opt"   x="2260" y="1574" text-anchor="middle">штукат. / металл</text>
+  </g>
+  <g>
+    <text class="title" x="2480" y="1540" text-anchor="middle">Тёплый пол (WARMFL)</text>
+    <text class="opt"   x="2480" y="1558" text-anchor="middle">да / нет</text>
+  </g>
+  <g>
+    <text class="title" x="2700" y="1540" text-anchor="middle">Нагрузка (LOAD)</text>
+    <text class="opt"   x="2700" y="1558" text-anchor="middle">низкая / средн.</text>
+    <text class="opt"   x="2700" y="1574" text-anchor="middle">высокая</text>
+  </g>
+  <g>
+    <text class="title" x="2920" y="1540" text-anchor="middle">Адгезия (ADHES)</text>
+    <text class="opt"   x="2920" y="1558" text-anchor="middle">высокая / средн.</text>
+    <text class="opt"   x="2920" y="1574" text-anchor="middle">низкая</text>
+  </g>
+  <g>
+    <text class="title" x="3140" y="1540" text-anchor="middle">Тип плитки (TILETYP)</text>
+    <text class="opt"   x="3140" y="1558" text-anchor="middle">керамика / керамогр.</text>
+    <text class="opt"   x="3140" y="1574" text-anchor="middle">мозаика / клинкер</text>
+  </g>
+  <g>
+    <text class="title" x="3360" y="1540" text-anchor="middle">Температура (TEMPMOD)</text>
+    <text class="opt"   x="3360" y="1558" text-anchor="middle">стандарт. / низкие</text>
+    <text class="opt"   x="3360" y="1574" text-anchor="middle">высокие</text>
+  </g>
+
+  <!-- Группа 3: GROUT — 6 входов, шаг 220, x = 3600..4700 -->
+  <g>
+    <text class="title" x="3600" y="1540" text-anchor="middle">Мороз (FROST)</text>
+    <text class="opt"   x="3600" y="1558" text-anchor="middle">да / нет</text>
+  </g>
+  <g>
+    <text class="title" x="3820" y="1540" text-anchor="middle">Влажность (HUMID)</text>
+    <text class="opt"   x="3820" y="1558" text-anchor="middle">сух. / влажн. / мокр.</text>
+  </g>
+  <g>
+    <text class="title" x="4040" y="1540" text-anchor="middle">Помещение (ROOM)</text>
+    <text class="opt"   x="4040" y="1558" text-anchor="middle">ванная / кухня</text>
+    <text class="opt"   x="4040" y="1574" text-anchor="middle">гост. / балкон / нар.</text>
+  </g>
+  <g>
+    <text class="title" x="4260" y="1540" text-anchor="middle">Место (OUTDOOR)</text>
+    <text class="opt"   x="4260" y="1558" text-anchor="middle">внутр. / наружн.</text>
+  </g>
+  <g>
+    <text class="title" x="4480" y="1540" text-anchor="middle">Ширина швов (JOINT)</text>
+    <text class="opt"   x="4480" y="1558" text-anchor="middle">тонк. / средн. / широк.</text>
+  </g>
+  <g>
+    <text class="title" x="4700" y="1540" text-anchor="middle">Аллергия (ALLERGY)</text>
+    <text class="opt"   x="4700" y="1558" text-anchor="middle">да / нет</text>
+  </g>
+
+  <!-- =========================================================
+       РЁБРА: входы → промежуточные узлы (кривые Безье)
+       Каждое ребро окрашено по цепочке-получателю.
+       ========================================================= -->
+
+  <!-- ===== В DIFFIC (x=840, y=1170) — синий (LAYPAT) ===== -->
+  <path class="edge e-laypat" d="M 180  1525 C 180  1340, 800  1300, 825  1175"/>
+  <path class="edge e-laypat" d="M 400  1525 C 400  1340, 820  1300, 840  1175"/>
+  <path class="edge e-laypat" d="M 1820 1525 C 1820 1380, 900  1300, 855  1175"/>
+
+  <!-- ===== В SKILLREQ (x=840, y=920) — синий ===== -->
+  <path class="edge e-laypat" d="M 620 1525 C 620 1200, 830 1050, 840 925"/>
+
+  <!-- ===== В NEEDPRO (x=840, y=680) — синий ===== -->
+  <path class="edge e-laypat" d="M 840 1525 C 840 1100, 840 800, 840 685"/>
+
+  <!-- ===== В LAYPAT (x=840, y=460) — синий ===== -->
+  <path class="edge e-laypat" d="M 180  1525 C 180  1000, 820  600, 830  470"/>
+  <path class="edge e-laypat" d="M 840  1525 C 840  1100, 840  700, 840  470"/>
+  <path class="edge e-laypat" d="M 1060 1525 C 1060 1000, 850  600, 845  470"/>
+  <path class="edge e-laypat" d="M 1280 1525 C 1280 1000, 860  600, 850  470"/>
+
+  <!-- ===== В ELAST (x=2550, y=1170) — зелёный (GLUE) ===== -->
+  <path class="edge e-glue" d="M 1820 1525 C 1820 1370, 2520 1290, 2530 1175"/>
+  <path class="edge e-glue" d="M 2260 1525 C 2260 1360, 2540 1280, 2540 1175"/>
+  <path class="edge e-glue" d="M 2480 1525 C 2480 1360, 2545 1280, 2545 1175"/>
+  <path class="edge e-glue" d="M 2700 1525 C 2700 1360, 2555 1280, 2550 1175"/>
+  <path class="edge e-glue" d="M 3140 1525 C 3140 1360, 2570 1280, 2560 1175"/>
+  <path class="edge e-glue" d="M 1280 1525 C 1280 1380, 2500 1290, 2535 1175"/>
+  <path class="edge e-glue" d="M 3600 1525 C 3600 1370, 2580 1290, 2570 1175"/>
+
+  <!-- ===== В GLUECLASS (x=2550, y=925) — зелёный ===== -->
+  <path class="edge e-glue" d="M 2040 1525 C 2040 1200, 2530 1050, 2540 925"/>
+  <path class="edge e-glue" d="M 2700 1525 C 2700 1200, 2555 1050, 2548 925"/>
+  <path class="edge e-glue" d="M 2920 1525 C 2920 1200, 2565 1050, 2552 925"/>
+  <path class="edge e-glue" d="M 3140 1525 C 3140 1200, 2575 1050, 2556 925"/>
+
+  <!-- ===== В GLUE (x=2550, y=460) — зелёный ===== -->
+  <path class="edge e-glue" d="M 2920 1525 C 2920 1000, 2560 600, 2555 470"/>
+  <path class="edge e-glue" d="M 3140 1525 C 3140 1000, 2565 600, 2560 470"/>
+  <path class="edge e-glue" d="M 3360 1525 C 3360 1000, 2570 600, 2565 470"/>
+  <path class="edge e-glue" d="M 3600 1525 C 3600 1000, 2575 600, 2570 470"/>
+
+  <!-- ===== В WETENV (x=4140, y=1170) — оранжевый (GROUT) ===== -->
+  <path class="edge e-grout" d="M 3820 1525 C 3820 1370, 4120 1290, 4125 1175"/>
+  <path class="edge e-grout" d="M 4040 1525 C 4040 1370, 4135 1290, 4140 1175"/>
+
+  <!-- ===== В HYDRO (x=4140, y=925) — оранжевый ===== -->
+  <path class="edge e-grout" d="M 4040 1525 C 4040 1200, 4130 1050, 4135 925"/>
+  <path class="edge e-grout" d="M 4260 1525 C 4260 1200, 4140 1050, 4140 925"/>
+  <path class="edge e-grout" d="M 2260 1525 C 2260 1100, 4100 1050, 4130 925"/>
+  <path class="edge e-grout" d="M 2480 1525 C 2480 1100, 4110 1050, 4135 925"/>
+
+  <!-- ===== В GROUT (x=4140, y=460) — оранжевый ===== -->
+  <path class="edge e-grout" d="M 3600 1525 C 3600 1000, 4130 600, 4135 470"/>
+  <path class="edge e-grout" d="M 4480 1525 C 4480 1000, 4150 600, 4145 470"/>
+  <path class="edge e-grout" d="M 4700 1525 C 4700 1000, 4160 600, 4150 470"/>
+  <path class="edge e-grout" d="M 2040 1525 C 2040 900,  4100 600, 4130 470"/>
+
+  <!-- ===== В COSTLEVEL (x=5100, y=925) — фиолетовый ===== -->
+  <path class="edge e-cost" d="M 1820 1525 C 1820 1100, 5080 1050, 5095 925"/>
+  <path class="edge e-cost" d="M 3140 1525 C 3140 1100, 5085 1050, 5100 925"/>
+  <path class="edge e-cost" d="M 620  1525 C 620  1100, 5075 1050, 5090 925"/>
+  <path class="edge e-cost" d="M 3600 1525 C 3600 1100, 5090 1050, 5105 925"/>
+  <path class="edge e-cost" d="M 2480 1525 C 2480 1100, 5095 1050, 5110 925"/>
+
+  <!-- ===== В BUDGETFIT (x=5100, y=680) — фиолетовый ===== -->
+  <path class="edge e-cost" d="M 2040 1525 C 2040 900, 5080 800, 5095 685"/>
+
+</svg>
